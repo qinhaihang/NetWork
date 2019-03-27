@@ -32,7 +32,10 @@ public class HttpHelper {
         return SingletonHolder.INSTANCE;
     }
 
-    private void init(){
+    /**
+     * 建议在 Application中初始化
+     */
+    public void init(){
         if(mOkHttpClient == null){
             mOkHttpClient = NetWorkManager.defaultOkHttpClient();
         }
@@ -41,6 +44,11 @@ public class HttpHelper {
             mRetrofit = NetWorkManager.defaultRetrofit(mOkHttpClient,mBaseUrl,mFactory);
         }
 
+    }
+
+    public HttpHelper addBaseUrl(String baseUrl) {
+        mBaseUrl = baseUrl;
+        return this;
     }
 
     public HttpHelper addOkHttpClient(OkHttpClient okHttpClient) {
