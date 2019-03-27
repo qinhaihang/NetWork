@@ -1,4 +1,4 @@
-package com.qhh.commonbaselibrary;
+package com.qhh.commombase;
 
 import org.junit.Test;
 
