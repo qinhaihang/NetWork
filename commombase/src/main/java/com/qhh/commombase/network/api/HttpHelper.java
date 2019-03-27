@@ -1,4 +1,4 @@
-package com.qhh.commombase.network;
+package com.qhh.commombase.network.api;
 
 import com.qhh.commombase.network.exception.HttpHelperException;
 import com.qhh.commombase.network.manager.NetWorkManager;
@@ -72,4 +72,5 @@ public class HttpHelper {
         }
         return mRetrofit.create(apiServer);
     }
+
 }

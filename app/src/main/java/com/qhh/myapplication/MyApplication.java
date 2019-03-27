@@ -2,7 +2,7 @@ package com.qhh.myapplication;
 
 import android.app.Application;
 
-import com.qhh.commombase.network.HttpHelper;
+import com.qhh.commombase.network.api.HttpHelper;
 
 /**
  * @author qinhaihang_vendor
