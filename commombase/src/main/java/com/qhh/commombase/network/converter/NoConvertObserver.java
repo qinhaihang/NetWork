@@ -1,7 +1,11 @@
 package com.qhh.commombase.network.converter;
 
+import java.io.IOException;
+
 import io.reactivex.observers.DisposableObserver;
 import okhttp3.ResponseBody;
+import okio.BufferedSource;
+import okio.Okio;
 
 /**
  * @author qinhaihang_vendor
@@ -17,6 +21,21 @@ public abstract class NoConvertObserver extends DisposableObserver<ResponseBody>
 
     @Override
     public void onNext(ResponseBody responseBody) {
+        BufferedSource bufferedSource = Okio.buffer(responseBody.source());
+        String tempStr = "";
+        try {
+            tempStr = bufferedSource.readUtf8();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedSource.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        onSuccess(200,tempStr);
 
     }
 
@@ -29,4 +48,10 @@ public abstract class NoConvertObserver extends DisposableObserver<ResponseBody>
     public void onComplete() {
 
     }
+
+    public abstract void onSuccess(int code, String msg);
+
+    public abstract void onFailure(int code, String msg);
+
+    public abstract void onSysError(Throwable e);
 }

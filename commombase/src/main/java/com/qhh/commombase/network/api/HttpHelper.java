@@ -11,7 +11,7 @@ import retrofit2.Retrofit;
  * @author qinhaihang_vendor
  * @version $Rev$
  * @time 2019/3/27 16:36
- * @des  对外暴露的操作辅助类
+ * @des  对外暴露的操作辅助类,在业务层调用的时候配合业务层的 Loader使用
  * @packgename com.qhh.commombase.network
  * @updateAuthor $Author$
  * @updateDate $Date$

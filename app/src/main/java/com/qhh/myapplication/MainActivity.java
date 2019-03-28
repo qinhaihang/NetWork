@@ -10,18 +10,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        NoConvertObserver noConvertObserver = new NoConvertObserver() {
-//
-//        };
-//
-//        try {
-//            SubscribeHelper.getInstance().subscribeOb(
-//                    HttpHelper.getInstance().create(MovieService.class),
-//                    noConvertObserver
-//            );
-//        } catch (HttpHelperException e) {
-//            e.printStackTrace();
-//        }
-
     }
 }
