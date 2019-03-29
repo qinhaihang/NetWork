@@ -36,8 +36,9 @@ public class MovieLoader {
         }
     }
 
-    public void getMovie(int start, int count){
+    public Observable<ResponseBody> getMovie(int start, int count){
         Observable<ResponseBody> moviesObservable = mMovieService.getMovies(start, count);
+        return moviesObservable;
     }
 
 }
