@@ -12,7 +12,7 @@ import java.util.Map;
  * @updateDate $Date$
  * @updateDes
  */
-interface IEncrypt {
+public interface IEncrypt {
     String encrypt(String urlPath, Map<String, Object> params);
     String dencrypt();
 }
